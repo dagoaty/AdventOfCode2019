@@ -19,11 +19,17 @@ class TestOps(unittest.TestCase):
         Test full opscode run
         """
         inputs1 = [1, 0, 0, 0, 99]
-        inputs2 = [1, 1, 1, 4, 99, 5, 6, 0, 99]
+        inputs2 = [2, 3, 0, 3, 99]
+        inputs3 = [2, 4, 4, 5, 99, 0]
+        inputs4 = [1, 1, 1, 4, 99, 5, 6, 0, 99]
         result1 = run_opscode(inputs1)
         result2 = run_opscode(inputs2)
+        result3 = run_opscode(inputs3)
+        result4 = run_opscode(inputs4)
         self.assertEqual(result1[0], 2)
-        self.assertEqual(result2[0], 30)
+        self.assertEqual(result2[0], 2)
+        self.assertEqual(result3[0], 2)
+        self.assertEqual(result4[0], 30)
 
 
     def test_run_chunk(self):
@@ -35,8 +41,8 @@ class TestOps(unittest.TestCase):
         chunk2 = [2,3,4]
         result1 = run_chunk(chunk1, inputs)
         result2 = run_chunk(chunk2, inputs)
-        self.assertEqual(result1[0], 7)
-        self.assertEqual(result2[0], 20)
+        self.assertEqual(result1, 7)
+        self.assertEqual(result2, 20)
 
 
 if __name__ == '__main__':

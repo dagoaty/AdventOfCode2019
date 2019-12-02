@@ -8,14 +8,14 @@ def run_opscode(inputs):
     pos = 0
     size = len(inputs)
     while pos <= size:
-        chunk = inputs[pos:pos+3]
-        if chunk[0] == 99:
+        if inputs[pos] == 99:
             break
+        chunk = inputs[pos:pos+3]
         value = run_chunk(chunk, inputs)
-        inputs[inputs[pos+4]] = value
+        inputs[inputs[pos+3]] = value
         pos += 4
     return inputs
-    
+
 
 def run_chunk(chunk, inputs):
     action = chunk[0]
