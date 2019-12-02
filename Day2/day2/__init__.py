@@ -1,6 +1,6 @@
-def restore_state(inputs):
-    inputs[1] = 12
-    inputs[2] = 2
+def apply_state(inputs, noun, verb):
+    inputs[1] = noun
+    inputs[2] = verb
     return inputs
 
 

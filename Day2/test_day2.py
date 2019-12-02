@@ -1,6 +1,6 @@
 import unittest
 
-from day2 import restore_state, run_opscode, run_chunk
+from day2 import apply_state, run_opscode, run_chunk
 
 class TestOps(unittest.TestCase):
     def test_restore_state(self):
@@ -9,7 +9,7 @@ class TestOps(unittest.TestCase):
         """
         data = [10, 15, 20, 25, 30]
 
-        result = restore_state(data)
+        result = apply_state(data, 12, 2)
         self.assertEqual(result[1], 12)
         self.assertEqual(result[2], 2)
 
