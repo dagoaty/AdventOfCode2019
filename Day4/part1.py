@@ -21,11 +21,11 @@ while cur_num <= end:
         cur_num += 1
         continue
 
-    if not day4.has_double(cur_num):
+    if not day4.has_repeat(cur_num):
         cur_num += 1
         continue
 
+    cur_num += 1
     results.append(cur_num)
 
 print("There are %s possible passwords" % len(results))
-print(results)
