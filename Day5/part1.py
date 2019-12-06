@@ -5,8 +5,6 @@ import day5
 
 filename = sys.argv[1]
 inputs = day5.read_inputs(filename)
+user_input = 1
 
-state = day5.apply_state(inputs, 12, 2)
-outputs = day5.run_opscode(state)
-
-print("Position 0 is: %s" % outputs[0])
+outputs = day5.run_opscode(inputs, user_input)
